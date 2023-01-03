@@ -1,6 +1,8 @@
 package com.example.easy_news.Models;
 
-public class Articles {
+import java.io.Serializable;
+
+public class Articles implements Serializable {
     Source source = null;
     String author = "";
     String title = "";

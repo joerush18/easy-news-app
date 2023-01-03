@@ -1,8 +1,9 @@
 package com.example.easy_news.Models;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class ApiResponse {
+public class ApiResponse implements Serializable {
     String status = "";
     Integer totalResults;
     List<Articles> articles ;
