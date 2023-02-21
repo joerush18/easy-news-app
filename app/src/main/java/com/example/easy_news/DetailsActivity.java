@@ -20,14 +20,14 @@ public class DetailsActivity extends AppCompatActivity {
 
         articles = getIntent().getParcelableExtra("data");
 
-        txt_title = findViewById(R.id.text_details_time);
+        txt_title = findViewById(R.id.text_details_title);
         txt_author = findViewById(R.id.text_details_author);
         txt_time = findViewById(R.id.text_details_time);
         txt_content = findViewById(R.id.text_details_content);
         txt_detail = findViewById(R.id.text_details_detail);
         img_news = findViewById(R.id.img_details_news);
 
-        txt_time.setText(articles.getTitle());
+        txt_title.setText(articles.getTitle());
         txt_author.setText(articles.getAuthor());
         txt_time.setText(articles.getPublishedAt());
         txt_detail.setText(articles.getDescription());
