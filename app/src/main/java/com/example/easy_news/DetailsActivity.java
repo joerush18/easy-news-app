@@ -1,11 +1,9 @@
 package com.example.easy_news;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.example.easy_news.Models.Articles;
 import com.squareup.picasso.Picasso;
 
@@ -17,8 +15,7 @@ public class DetailsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
-
-        articles = getIntent().getParcelableExtra("data");
+        articles = (Articles) getIntent().getSerializableExtra("data");
 
         txt_title = findViewById(R.id.text_details_title);
         txt_author = findViewById(R.id.text_details_author);
