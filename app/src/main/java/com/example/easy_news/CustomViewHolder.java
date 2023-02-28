@@ -9,9 +9,10 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class CustomViewHolder extends RecyclerView.ViewHolder {
-    TextView text_title , text_source;
+    TextView text_title, text_source;
     ImageView img_headline;
-    CardView cardView ;
+    CardView cardView;
+
     public CustomViewHolder(@NonNull View itemView) {
         super(itemView);
         text_title = itemView.findViewById(R.id.text_title);

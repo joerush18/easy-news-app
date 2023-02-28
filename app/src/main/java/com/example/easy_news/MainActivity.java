@@ -7,19 +7,21 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.easy_news.Models.ApiResponse;
 import com.example.easy_news.Models.Articles;
 
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements  SelectListener, View.OnClickListener{
-RecyclerView recyclerView;
-CustomAdapter adapter;
-ProgressDialog dialog;
-Button b1,b2,b3,b4,b5,b6,b7;
+public class MainActivity extends AppCompatActivity implements SelectListener, View.OnClickListener {
+    RecyclerView recyclerView;
+    CustomAdapter adapter;
+    ProgressDialog dialog;
+    Button b1, b2, b3, b4, b5, b6, b7;
 
 
     @Override
@@ -51,12 +53,8 @@ Button b1,b2,b3,b4,b5,b6,b7;
         b7 = findViewById(R.id.btn_7);
         b7.setOnClickListener(this);
 
-
-
-
         RequestManager manager = new RequestManager(this);
         manager.getNewsHeadlines(listener, "general", null);
-
 
     }
 
@@ -64,8 +62,8 @@ Button b1,b2,b3,b4,b5,b6,b7;
     private final OnFetchDataListener<ApiResponse> listener = new OnFetchDataListener<ApiResponse>() {
         @Override
         public void onFetchData(List<Articles> list, String message) {
-          showNews(list);
-          dialog.dismiss();
+            showNews(list);
+            dialog.dismiss();
         }
 
         @Override
@@ -78,19 +76,20 @@ Button b1,b2,b3,b4,b5,b6,b7;
         recyclerView = findViewById(R.id.recycler_main);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new GridLayoutManager(this, 1));
-        adapter = new CustomAdapter(this, list, this );
+        adapter = new CustomAdapter(this, list, this);
         recyclerView.setAdapter(adapter);
     }
 
     @Override
     public void OnNewsClicked(Articles articles) {
-           startActivity(new Intent(MainActivity.this, DetailsActivity.class).putExtra("data", articles));
+        startActivity(new Intent(MainActivity.this, DetailsActivity.class).putExtra("data", articles));
+        Log.d("articles", articles.getTitle());
     }
 
     @Override
     public void onClick(View view) {
         Button button = (Button) view;
-        String category  = button.getText().toString();
+        String category = button.getText().toString();
         dialog.setTitle("Fetching news articles of" + category);
         dialog.show();
         RequestManager manager = new RequestManager(this);
