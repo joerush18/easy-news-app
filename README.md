@@ -8,7 +8,7 @@ This is a mobile app built with Java Android studio. This app allows user to vie
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/joerush18/easy-news-app/blob/main/screenshot.png)
 
 
 ## Demo
