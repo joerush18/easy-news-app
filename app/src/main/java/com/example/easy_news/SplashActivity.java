@@ -26,6 +26,8 @@ public class SplashActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
 
+        img_splash = findViewById(R.id.img_splash);
+        txt_splash = findViewById(R.id.txt_splash);
         YoYo.with(Techniques.DropOut).duration(3000).repeat(1).playOn(findViewById(R.id.img_splash));
         YoYo.with(Techniques.FadeInRight).duration(3000).repeat(1).playOn(findViewById(R.id.txt_splash));
         Intent iHome = new Intent(SplashActivity.this, MainActivity.class);
