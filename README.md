@@ -13,5 +13,5 @@ This is a mobile app built with Java Android studio. This app allows user to vie
 
 ## Demo
 
-Insert gif or link to demo
+![Demo Video](https://github.com/joerush18/easy-news-app/blob/main/demo.gif)
 
